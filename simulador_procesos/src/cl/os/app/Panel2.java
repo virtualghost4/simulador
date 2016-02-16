@@ -19,9 +19,9 @@ public class Panel2 extends JPanel  {
 	
 	private static final long serialVersionUID = 1L;
 	private JTable tabla;
-	private DefaultTableModel datos;
-	private String captado;
-	private String[] fila;
+	private DefaultTableModel tableModel;
+	private int captado;
+	private String[] datos;
 
 	
 	public Panel2(){
@@ -30,21 +30,59 @@ public class Panel2 extends JPanel  {
 		TitledBorder titulo2 = BorderFactory.createTitledBorder("Lista de Procesos");
 		this.setBorder(titulo2);
 		
-		String[] columnNames = {"Proceso", "Tiempo Llegada", "Ráfaga"};
+		String[] cabecera = {"Proceso", "Tiempo Llegada", "Ráfaga"};
 		
-			datos = new DefaultTableModel(columnNames,5);
+			tableModel = new DefaultTableModel(cabecera,1);
 	        
 			
 		
-		tabla = new JTable(datos);
+		tabla = new JTable(tableModel);
 		tabla.setPreferredScrollableViewportSize(new Dimension(500, 70));
         JScrollPane scrollPane = new JScrollPane(tabla);
         add(scrollPane, BorderLayout.CENTER);
-		tabla.setModel(datos);
-
+		tabla.setModel(tableModel);
+		tableModel.addRow(datos);
 		
-        //datos.addRow(fila);
-        
+	}
+
+
+	public JTable getTabla() {
+		return tabla;
+	}
+
+
+	public void setTabla(JTable tabla) {
+		this.tabla = tabla;
+	}
+
+
+	public DefaultTableModel getTableModel() {
+		return tableModel;
+	}
+
+
+	public void setTableModel(DefaultTableModel tableModel) {
+		this.tableModel = tableModel;
+	}
+
+
+	public String[] getDatos() {
+		return datos;
+	}
+
+
+	public void setDatos(String[] datos) {
+		this.datos = datos;
+	}
+
+
+	public int getCaptado() {
+		return captado;
+	}
+
+
+	public void setCaptado(int captado) {
+		this.captado = captado;
 	}
 
 

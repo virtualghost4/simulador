@@ -47,8 +47,8 @@ public class Panel1 extends JPanel{
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 	
-		//cargar.addActionListener(new Load(procesoTxt,tiempoTxt, rafagaTxt, priorityTxt,this));
-		cargar.addActionListener(new Panel2());
+		cargar.addActionListener(new Load(procesoTxt,tiempoTxt, rafagaTxt, priorityTxt,this));
+		
 		
 		c.gridx = 0;
 		c.gridy = 0;
@@ -106,6 +106,7 @@ public class Panel1 extends JPanel{
 		this.add(algType,c);
 		algType.addItem("FIFO");
 		algType.addItem("Round Robin");
+		algType.addItem("SJF");
 		
 		c.gridx = 3;
 		c.gridy = 3;

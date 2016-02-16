@@ -13,7 +13,10 @@ public class Load implements ActionListener{
 	private JTextField objeto2;
 	private JTextField objeto3;
 	private JTextField objeto4;
-
+	private int proceso;
+	private int tiempo;
+	private int rafaga;
+	private String[] tableData;
 	
 	public Load(JTextField procesoTxt, JTextField tiempoTxt,
 				 JTextField rafagaTxt, JTextField priorityTxt, Panel1 panel1){
@@ -23,6 +26,8 @@ public class Load implements ActionListener{
 		this.objeto2 = tiempoTxt;
 		this.objeto3 = rafagaTxt;
 		this.objeto4 = priorityTxt;
+		
+		
 	}
 
 	
@@ -85,23 +90,55 @@ public class Load implements ActionListener{
 		this.objeto4 = objeto4;
 	}
 
+	public int getProceso() {
+		return proceso;
+	}
 
 
-	
+
+	public void setProceso(int proceso) {
+		this.proceso = proceso;
+	}
 
 
 
-	
+	public int getTiempo() {
+		return tiempo;
+	}
+
+
+
+	public void setTiempo(int tiempo) {
+		this.tiempo = tiempo;
+	}
+
+
+
+	public int getRafaga() {
+		return rafaga;
+	}
+
+
+
+	public void setRafaga(int rafaga) {
+		this.rafaga = rafaga;
+	}
 
 
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
-		this.dato = this.objeto1.getText()+" "+ this.objeto2.getText()+" "+this.objeto3.getText()
-		+" "+objeto4.getText();
+		//this.dato = this.objeto1.getText()+" "+ this.objeto2.getText()+" "+this.objeto3.getText()
+		//+" "+objeto4.getText();
 		Panel2 p2 = new Panel2();
-		Panel1 p1 = new Panel1();
+		//proceso=Integer.parseInt(this.objeto1.getText());
+		String[] tableData = new String[5];
+		tableData[0]=this.objeto1.getText();
+		tableData[1]=this.objeto2.getText();
+		p2.getTableModel().addRow(tableData);
+		
+		
 	}
 
 
