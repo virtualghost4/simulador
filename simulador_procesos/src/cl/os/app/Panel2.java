@@ -2,15 +2,10 @@ package cl.os.app;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Vector;
-
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,26 +17,20 @@ public class Panel2 extends JPanel  {
 	private DefaultTableModel tableModel;
 	private int captado;
 	private String[] datos;
-
+	public static Panel2 p2;
 	
 	public Panel2(){
 		
-		
+		p2=this;
 		TitledBorder titulo2 = BorderFactory.createTitledBorder("Lista de Procesos");
 		this.setBorder(titulo2);
-		
 		String[] cabecera = {"Proceso", "Tiempo Llegada", "Ráfaga"};
-		
-			tableModel = new DefaultTableModel(cabecera,1);
-	        
-			
-		
-		tabla = new JTable(tableModel);
+		tableModel = new DefaultTableModel(cabecera,0);
+	    tabla = new JTable(tableModel);
 		tabla.setPreferredScrollableViewportSize(new Dimension(500, 70));
         JScrollPane scrollPane = new JScrollPane(tabla);
         add(scrollPane, BorderLayout.CENTER);
 		tabla.setModel(tableModel);
-		tableModel.addRow(datos);
 		
 	}
 
@@ -84,12 +73,6 @@ public class Panel2 extends JPanel  {
 	public void setCaptado(int captado) {
 		this.captado = captado;
 	}
-
-
-
 	
-
-
-		
 	
 }

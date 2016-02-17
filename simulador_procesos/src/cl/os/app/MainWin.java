@@ -14,11 +14,14 @@ public class MainWin extends JFrame{
 	private Panel1 p1;
 	private Panel2 p2;
 	private Panel3 p3;
+	public static Load load;
 	
 	public MainWin(){
 		super("Simulador de Procesos");
 		this.menu = new BarraMenu();
-		this.p1 = new Panel1();
+		Load load = new Load();
+
+		this.p1 = new Panel1(Load.load1);
 		this.p2 = new Panel2();
 		this.p3 = new Panel3();
 		super.setSize(ANCHO,ALTO);
@@ -28,7 +31,6 @@ public class MainWin extends JFrame{
 		super.add(p1,BorderLayout.NORTH);
 		super.add(p2,BorderLayout.CENTER);
 		super.add(p3,BorderLayout.SOUTH);
-
 		
 		super.setVisible(true);
 		super.setLocationRelativeTo(p1);

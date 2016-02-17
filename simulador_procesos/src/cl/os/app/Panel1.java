@@ -2,7 +2,7 @@ package cl.os.app;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-
+import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -27,11 +27,12 @@ public class Panel1 extends JPanel{
 	private JLabel priority;
 	private JTextField priorityTxt;
 	private JComboBox<String> algType; //para elegir el tipo de algoritmo
+	public static Panel1 p1;
 	
-	
-	public Panel1(){
+	public Panel1(ActionListener load){
 		//this.setBackground(Color.BLUE);
 		
+		p1=this;
 		this.proceso = new JLabel("Proceso");
 		this.cargar = new JButton("Cargar");
 		this.procesoTxt = new JTextField(10);
@@ -46,9 +47,11 @@ public class Panel1 extends JPanel{
 		this.setBorder(titulo1);
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
-	
-		cargar.addActionListener(new Load(procesoTxt,tiempoTxt, rafagaTxt, priorityTxt,this));
 		
+		
+		cargar.addActionListener(Load.load1);
+		
+		//cargar.setActionCommand("cargar");
 		
 		c.gridx = 0;
 		c.gridy = 0;

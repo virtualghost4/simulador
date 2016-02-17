@@ -8,64 +8,34 @@ import javax.swing.JTextField;
 public class Load implements ActionListener{
 
 	//private Panel1 pan1;
-	private String dato;
 	private JTextField objeto1;
 	private JTextField objeto2;
 	private JTextField objeto3;
 	private JTextField objeto4;
-	private int proceso;
-	private int tiempo;
-	private int rafaga;
 	private String[] tableData;
 	
-	public Load(JTextField procesoTxt, JTextField tiempoTxt,
-				 JTextField rafagaTxt, JTextField priorityTxt, Panel1 panel1){
+	public static Load load1;
 	
-		
-		this.objeto1 = procesoTxt;
-		this.objeto2 = tiempoTxt;
-		this.objeto3 = rafagaTxt;
-		this.objeto4 = priorityTxt;
-		
+	public Load(){
+	
+		load1=this;	
 		
 	}
 
+
+	@Override
+	public void actionPerformed(ActionEvent Arg0){
+			
+		
+			//if(Panel1.p1)
+			String[] tableData = new String[5];
+			tableData[0]=Panel1.p1.getProcesoTxt().getText();
+			tableData[1]=Panel1.p1.getTiempoTxt().getText();
+			tableData[2]=Panel1.p1.getRafagaTxt().getText();
+			Panel2.p2.getTableModel().addRow(tableData);
+			
 	
-	
-	public String getDato() {
-		return dato;
 	}
-
-
-
-	public void setDato(String dato) {
-		this.dato = dato;
-	}
-
-
-
-	public JTextField getObjeto1() {
-		return objeto1;
-	}
-
-
-
-	public void setObjeto1(JTextField objeto1) {
-		this.objeto1 = objeto1;
-	}
-
-
-
-	public JTextField getObjeto2() {
-		return objeto2;
-	}
-
-
-
-	public void setObjeto2(JTextField objeto2) {
-		this.objeto2 = objeto2;
-	}
-
 
 
 	public JTextField getObjeto3() {
@@ -73,11 +43,9 @@ public class Load implements ActionListener{
 	}
 
 
-
 	public void setObjeto3(JTextField objeto3) {
 		this.objeto3 = objeto3;
 	}
-
 
 
 	public JTextField getObjeto4() {
@@ -85,69 +53,18 @@ public class Load implements ActionListener{
 	}
 
 
-
 	public void setObjeto4(JTextField objeto4) {
 		this.objeto4 = objeto4;
 	}
 
-	public int getProceso() {
-		return proceso;
+
+	public String[] getTableData() {
+		return tableData;
 	}
 
 
-
-	public void setProceso(int proceso) {
-		this.proceso = proceso;
+	public void setTableData(String[] tableData) {
+		this.tableData = tableData;
 	}
-
-
-
-	public int getTiempo() {
-		return tiempo;
-	}
-
-
-
-	public void setTiempo(int tiempo) {
-		this.tiempo = tiempo;
-	}
-
-
-
-	public int getRafaga() {
-		return rafaga;
-	}
-
-
-
-	public void setRafaga(int rafaga) {
-		this.rafaga = rafaga;
-	}
-
-
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		
-		//this.dato = this.objeto1.getText()+" "+ this.objeto2.getText()+" "+this.objeto3.getText()
-		//+" "+objeto4.getText();
-		Panel2 p2 = new Panel2();
-		//proceso=Integer.parseInt(this.objeto1.getText());
-		String[] tableData = new String[5];
-		tableData[0]=this.objeto1.getText();
-		tableData[1]=this.objeto2.getText();
-		p2.getTableModel().addRow(tableData);
-		
-		
-	}
-
-
-
 	
-
-
-
-	
-	
-
 }
