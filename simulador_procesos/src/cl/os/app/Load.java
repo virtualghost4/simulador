@@ -27,14 +27,24 @@ public class Load implements ActionListener{
 	public void actionPerformed(ActionEvent Arg0){
 			
 		
-			//if(Panel1.p1)
+			if(Panel1.p1.getAlgType().getSelectedItem().equals("FIFO"))
+			{
 			String[] tableData = new String[5];
 			tableData[0]=Panel1.p1.getProcesoTxt().getText();
 			tableData[1]=Panel1.p1.getTiempoTxt().getText();
 			tableData[2]=Panel1.p1.getRafagaTxt().getText();
 			Panel2.p2.getTableModel().addRow(tableData);
+			}else{
+				if(Panel2.p2.getTableModel().getColumnCount()==3){
+					Panel2.p2.getTableModel().addColumn("Quantum");
+					System.out.println("se crea la columna");
+				}else{
+					System.out.println("no se crea la columna");
+					
+				}
+				
+			}
 			
-	
 	}
 
 

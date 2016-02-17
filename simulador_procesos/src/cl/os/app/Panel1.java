@@ -140,6 +140,16 @@ public class Panel1 extends JPanel{
 	public JTextField getPriorityTxt() {
 		return priorityTxt;
 	}
+
+
+	public JComboBox<String> getAlgType() {
+		return algType;
+	}
+
+
+	public void setAlgType(JComboBox<String> algType) {
+		this.algType = algType;
+	}
 	
 	
 
