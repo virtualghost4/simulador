@@ -40,7 +40,6 @@ public class Load implements ActionListener{
 					System.out.println("se crea la columna");
 				}else{
 					System.out.println("no se crea la columna");
-					
 				}
 				
 			}

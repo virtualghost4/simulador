@@ -27,6 +27,8 @@ public class Panel1 extends JPanel{
 	private JLabel priority;
 	private JTextField priorityTxt;
 	private JComboBox<String> algType; //para elegir el tipo de algoritmo
+	private JLabel quantum;
+	public JTextField quantumTxt;
 	public static Panel1 p1;
 	
 	public Panel1(ActionListener load){
@@ -42,13 +44,16 @@ public class Panel1 extends JPanel{
 		this.rafagaTxt = new JTextField(10);
 		this.priority = new JLabel("Prioridad");
 		this.priorityTxt = new JTextField(10);
+		this.quantum = new JLabel("Quantum");
+		this.quantumTxt = new JTextField(4);
 		this.algType = new JComboBox<String>();
+		this.quantumTxt.setEnabled(false);
 		TitledBorder titulo1 = BorderFactory.createTitledBorder("Datos de Proceso");
 		this.setBorder(titulo1);
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		
+		algType.addActionListener(new Preload());
 		cargar.addActionListener(Load.load1);
 		
 		//cargar.setActionCommand("cargar");
@@ -111,6 +116,19 @@ public class Panel1 extends JPanel{
 		algType.addItem("Round Robin");
 		algType.addItem("SJF");
 		
+		
+		c.gridx = 1;
+		c.gridy = 3;
+		c.gridwidth = 1;
+		c.gridheight = 1;
+		this.add(quantum, c);
+		
+		c.gridx = 2;
+		c.gridy = 3;
+		c.gridwidth = 1;
+		c.gridheight = 1;
+		this.add(quantumTxt, c);
+		
 		c.gridx = 3;
 		c.gridy = 3;
 		c.gridwidth = 1;
@@ -149,6 +167,16 @@ public class Panel1 extends JPanel{
 
 	public void setAlgType(JComboBox<String> algType) {
 		this.algType = algType;
+	}
+
+
+	public JTextField getQuantumTxt() {
+		return quantumTxt;
+	}
+
+
+	public void setQuantumTxt(JTextField quantumTxt) {
+		this.quantumTxt = quantumTxt;
 	}
 	
 	
