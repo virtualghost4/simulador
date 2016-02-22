@@ -21,11 +21,11 @@ public class Panel1 extends JPanel{
 	private JTextField procesoTxt;
 	private JButton cargar;
 	private JLabel tiempo;
-	private JTextField tiempoTxt;
+	public JTextField tiempoTxt;
 	private JLabel rafaga;
 	private JTextField rafagaTxt;
 	private JLabel priority;
-	private JTextField priorityTxt;
+	public JTextField priorityTxt;
 	private JComboBox<String> algType; //para elegir el tipo de algoritmo
 	private JLabel quantum;
 	public JTextField quantumTxt;
@@ -114,8 +114,9 @@ public class Panel1 extends JPanel{
 		this.add(algType,c);
 		algType.addItem("FIFO");
 		algType.addItem("Round Robin");
-		algType.addItem("SJF");
-		
+		//algType.addItem("SJF");
+		//algType.addItem("SRTF");
+		//algType.addItem("Prioridad");
 		
 		c.gridx = 1;
 		c.gridy = 3;

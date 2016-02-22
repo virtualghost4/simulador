@@ -20,9 +20,10 @@ public class MainWin extends JFrame{
 		super("Simulador de Procesos");
 		this.menu = new BarraMenu();
 		Load load = new Load();
-
+		Analizar analizar = new Analizar();
+		
 		this.p1 = new Panel1(Load.load1);
-		this.p2 = new Panel2();
+		this.p2 = new Panel2(Analizar.a1);
 		this.p3 = new Panel3();
 		super.setSize(ANCHO,ALTO);
 		super.setDefaultCloseOperation(EXIT_ON_CLOSE);

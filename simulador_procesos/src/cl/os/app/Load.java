@@ -26,6 +26,17 @@ public class Load implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent Arg0){
 			
+		/*debo poner un switch
+		 * 
+		 * switch()
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * */
 		
 			if(Panel1.p1.getAlgType().getSelectedItem().equals("FIFO"))
 			{
