@@ -45,6 +45,13 @@ public class Load implements ActionListener{
 			tableData[1]=Panel1.p1.getTiempoTxt().getText();
 			tableData[2]=Panel1.p1.getRafagaTxt().getText();
 			Panel2.p2.getTableModel().addRow(tableData);
+			
+			
+			Panel1.p1.tiempoTxt.setText(null);
+			Panel1.p1.procesoTxt.setText(null);
+			Panel1.p1.rafagaTxt.setText(null);
+			
+			
 			}else{
 				if(Panel2.p2.getTableModel().getColumnCount()==3){
 					Panel2.p2.getTableModel().addColumn("Quantum");

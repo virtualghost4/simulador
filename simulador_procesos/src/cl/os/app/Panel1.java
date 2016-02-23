@@ -18,12 +18,12 @@ public class Panel1 extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JLabel proceso;
-	private JTextField procesoTxt;
+	public JTextField procesoTxt;
 	private JButton cargar;
 	private JLabel tiempo;
 	public JTextField tiempoTxt;
 	private JLabel rafaga;
-	private JTextField rafagaTxt;
+	public JTextField rafagaTxt;
 	private JLabel priority;
 	public JTextField priorityTxt;
 	private JComboBox<String> algType; //para elegir el tipo de algoritmo
@@ -178,6 +178,101 @@ public class Panel1 extends JPanel{
 
 	public void setQuantumTxt(JTextField quantumTxt) {
 		this.quantumTxt = quantumTxt;
+	}
+
+
+	public JLabel getProceso() {
+		return proceso;
+	}
+
+
+	public void setProceso(JLabel proceso) {
+		this.proceso = proceso;
+	}
+
+
+	public JButton getCargar() {
+		return cargar;
+	}
+
+
+	public void setCargar(JButton cargar) {
+		this.cargar = cargar;
+	}
+
+
+	public JLabel getTiempo() {
+		return tiempo;
+	}
+
+
+	public void setTiempo(JLabel tiempo) {
+		this.tiempo = tiempo;
+	}
+
+
+	public JLabel getRafaga() {
+		return rafaga;
+	}
+
+
+	public void setRafaga(JLabel rafaga) {
+		this.rafaga = rafaga;
+	}
+
+
+	public JLabel getPriority() {
+		return priority;
+	}
+
+
+	public void setPriority(JLabel priority) {
+		this.priority = priority;
+	}
+
+
+	public JLabel getQuantum() {
+		return quantum;
+	}
+
+
+	public void setQuantum(JLabel quantum) {
+		this.quantum = quantum;
+	}
+
+
+	public static Panel1 getP1() {
+		return p1;
+	}
+
+
+	public static void setP1(Panel1 p1) {
+		Panel1.p1 = p1;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+	public void setProcesoTxt(JTextField procesoTxt) {
+		this.procesoTxt = procesoTxt;
+	}
+
+
+	public void setTiempoTxt(JTextField tiempoTxt) {
+		this.tiempoTxt = tiempoTxt;
+	}
+
+
+	public void setRafagaTxt(JTextField rafagaTxt) {
+		this.rafagaTxt = rafagaTxt;
+	}
+
+
+	public void setPriorityTxt(JTextField priorityTxt) {
+		this.priorityTxt = priorityTxt;
 	}
 	
 	
